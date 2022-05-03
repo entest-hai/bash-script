@@ -41,3 +41,10 @@ open vim and run
 ```
 : call dein#install()
 ```
+
+### Configure vimrc
+
+```
+/.config/nvim/init.vim
+~/.vim/vimrc
+```
