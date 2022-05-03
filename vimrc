@@ -1,6 +1,6 @@
 " dein configure 
-set runtimepath+=/home/ubuntu/.cache/dein/repos/github.com/Shougo/dein.vim
-call dein#begin('/home/ubuntu/.cache/dein/')
+set runtimepath+=/Users/haimtran/.cache/dein/repos/github.com/Shougo/dein.vim
+call dein#begin('/Users/haimtran/.cache/dein')
 
 
 " global neovim config
@@ -92,9 +92,15 @@ syntax enable
 " auto closetag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx,*.tsx'
 
-
-
-
+call defx#custom#option('_', {
+      \ 'winwidth': 30,
+      \ 'split': 'vertical',
+      \ 'show_ignored_files': 0,
+      \ 'buffer_name': 'defxplorer',
+      \ 'toggle': 1,
+      \ 'resume': 1
+      \ })
+      
 " defx configure 
 map <C-t> :Defx<CR>
 map <C-f> :Defx -toggle<CR>
@@ -163,16 +169,6 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> cd
   \ defx#do_action('change_vim_cwd')
 endfunction
-
-" defx toggle slidebar file navigation
-call defx#custom#option('_', {
-      \ 'winwidth': 30,
-      \ 'split': 'vertical',
-      \ 'show_ignored_files': 0,
-      \ 'buffer_name': 'defxplorer',
-      \ 'toggle': 1,
-      \ 'resume': 1
-      \ })
 
 
 " Fix on save with dense analysis ale

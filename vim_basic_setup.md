@@ -1,5 +1,17 @@
 # Vim basic sestup
 
+### Note before defx
+
+```
+pip3 install --user pynvim
+```
+
+and
+
+```
+UpdateRemotePlugins
+```
+
 ### Install dein
 
 ```shell
@@ -29,5 +41,3 @@ open vim and run
 ```
 : call dein#install()
 ```
-
-###
