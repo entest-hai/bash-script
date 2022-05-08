@@ -1,9 +1,20 @@
 # Vim basic sestup
 
+### Install neovim 
+
+clone nvim 
+```shell
+https://github.com/neovim/neovim/releases/tag/v0.7.0
+```
+
 ### Note before defx
 
+```shell 
+export PATH=/home/ec2-user/nvim-linux64/bin:$PATH
 ```
-pip3 install --user pynvim
+create configuration for nvim 
+```
+~/.config/nvim/init.vim 
 ```
 
 and
