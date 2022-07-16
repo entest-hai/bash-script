@@ -247,7 +247,7 @@ endfunction
 
 ### Fix on save with prettier
 
-install vim-prettier
+install vim-prettier [HERE](https://github.com/prettier/vim-prettier)
 
 ```
 call dein#add('prettier/vim-prettier', {'build': 'npm install'})
