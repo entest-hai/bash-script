@@ -1,20 +1,23 @@
 # Vim basic sestup
 
-### Install neovim 
+### Install neovim
 
-clone nvim 
+clone nvim
+
 ```shell
 https://github.com/neovim/neovim/releases/tag/v0.7.0
 ```
 
 ### Note before defx
 
-```shell 
+```shell
 export PATH=/home/ec2-user/nvim-linux64/bin:$PATH
 ```
-create configuration for nvim 
+
+create configuration for nvim
+
 ```
-~/.config/nvim/init.vim 
+~/.config/nvim/init.vim
 ```
 
 and
@@ -59,8 +62,10 @@ open vim and run
 /.config/nvim/init.vim
 ~/.vim/vimrc
 ```
-content of init.vim sample 
-```bash 
+
+content of init.vim sample
+
+```bash
 " Required:
 set runtimepath+=/home/ec2-user/.cache/dein/repos/github.com/Shougo/dein.vim
 
@@ -89,12 +94,12 @@ call dein#add('/home/ec2-user/dein/repos/github.com/Shougo/dein.vim')
 " search and enter by key word
 set incsearch
 
-" move line up and down 
+" move line up and down
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 
 
-" netrw config                                                                 
+" netrw config
 let g:netrw_liststyle = 3
 let mapleader = ","
 let g:netrw_keepdir = 0
@@ -102,7 +107,7 @@ let g:netrw_winsize = 20
 map <C-a> :Lexplore<CR>
 " map <C-d> :Lexplore %:p:h<CR>
 
-" move cursor left and right insertm mode 
+" move cursor left and right insertm mode
 inoremap ii <Esc>
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
@@ -113,15 +118,15 @@ inoremap <C-l> <Right>
 :set cursorline
 :highlight CursorLine cterm=NONE ctermbg=23 ctermfg=NONE guibg=Grey40
 
-" copy to clipboard 
+" copy to clipboard
 :set clipboard=unnamedplus
 map <C-y> "+y
 
-" change cursor between modes 
+" change cursor between modes
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-" dein install plugins 
+" dein install plugins
 call dein#add('davidhalter/jedi-vim')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
@@ -169,8 +174,8 @@ call defx#custom#option('_', {
       \ 'toggle': 1,
       \ 'resume': 1
       \ })
-      
-" defx configure 
+
+" defx configure
 map <C-t> :Defx<CR>
 map <C-f> :Defx -toggle<CR>
 
@@ -238,23 +243,37 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> cd
   \ defx#do_action('change_vim_cwd')
 endfunction
-
-
-" Fix on save with dense analysis ale
-let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['eslint']}
-let g:ale_fix_on_save = 1
-
 ```
 
-### Update python and node pluggin if needed 
-```bash 
+### Fix on save with prettier
+
+install vim-prettier
+
+```
+call dein#add('prettier/vim-prettier', {'build': 'npm install'})
+```
+
+configure
+
+```
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+```
+
+### Update python and node pluggin if needed
+
+```bash
 pip3 install --user pynvim
 ```
-then open nvim and update 
-```bash 
-:UpdateRemotePlugins 
+
+then open nvim and update
+
+```bash
+:UpdateRemotePlugins
 ```
-go to nodejs.org and download the correction version 
-```bash 
+
+go to nodejs.org and download the correction version
+
+```bash
 wget https://nodejs.org/dist/v16.15.1/node-v16.15.1-linux-x64.tar.xz
 ```
